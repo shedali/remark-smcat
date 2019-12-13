@@ -4,10 +4,11 @@
 	"description": "state machine cat remark plugin",
 	"license": "MIT",
 	"repository": "shedali/remark-smcat",
+	"main": "index.js",
 	"author": {
 		"name": "Franz",
 		"email": "shedali@gmail.com",
-		"url": "undefined"
+		"url": "http://github.com/shedali/remark-smcat"
 	},
 	"engines": {
 		"node": ">=8"
