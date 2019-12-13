@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"strict": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"noUnusedLocals": true,
+		"pretty": true,
+    "types":["node"],
+    "outDir":"dist",
+    "declaration": true,
+		"lib": [
+			"esnext"
+		]
+	},
+  "exclude": [
+    "node_modules", "dist"
+  ]
+}

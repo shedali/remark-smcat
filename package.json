@@ -23,6 +23,8 @@
 		]
 	},
 	"scripts": {
+		"prepublish": "tsc",
+		"pretest": "tsc --noEmit",
 		"test": "xo && ava"
 	},
 	"files": [
@@ -33,6 +35,7 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
+		"@types/node": "^12.12.17",
 		"ava": "^2.4.0",
 		"rehype-stringify": "^6.0.1",
 		"remark-parse": "^7.0.2",

@@ -3,8 +3,8 @@
 const smcat = require('state-machine-cat');
 const visit = require('unist-util-visit');
 
-const visitCodeBlock = (ast, vFile) => {
-  return visit(ast, 'code', (node, index, parent) => {
+const visitCodeBlock = (ast: any, vFile: any) => {
+  return visit(ast, 'code', (node: any, index: any, parent: any) => {
     const { lang, value } = node;
     if (['smcat'].includes(lang)) {
       let statemachine;
@@ -27,7 +27,7 @@ const visitCodeBlock = (ast, vFile) => {
 }
 
 export const smcatParser = () => {
-  return function transformer(ast, vFile, next) {
+  return function transformer(ast: any, vFile: any, next: any) {
     visitCodeBlock(ast, vFile);
 
     if (typeof next === 'function') {

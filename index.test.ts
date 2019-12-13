@@ -16,14 +16,14 @@ const processor = unified()
 
 
 const convert: (m: string) => string = (markdown: string) => processor.processSync(markdown).contents
-test("smcat should be a function", t => {
+test("smcat should be a function", (t: any) => {
 	t.is(typeof smcat, "function");
 })
 
-test('should render markdown to html', t => {
+test('should render markdown to html', (t: any) => {
 	t.is(convert("# hello"), "<h1>hello</h1>");
 })
 
-test('should render smcat to svg', t => {
+test('should render smcat to svg', (t: any) => {
 	t.truthy(convert("oh no\n ```smcat\n a=>b; \n ``` \n what if no children ").indexOf('svg'));
 })
