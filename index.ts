@@ -3,19 +3,7 @@
 const smcat = require('state-machine-cat');
 const visit = require('unist-util-visit');
 
-module.exports = (input, { postfix = 'rainbows' } = {}) => {
-  if (typeof input !== 'string') {
-    throw new TypeError(`Expected a string, got ${typeof input}`);
-  }
-
-  return `${input} & ${postfix}`;
-};
-
-const walk = dir => { }
-
-const render = (source, engine) => { }
-
-const visitCodeBlock = (ast) => {
+const visitCodeBlock = (ast, vFile) => {
   return visit(ast, 'code', (node, index, parent) => {
     const { lang, value } = node;
     if (['smcat'].includes(lang)) {
@@ -24,12 +12,12 @@ const visitCodeBlock = (ast) => {
         statemachine = smcat.render(`${value}`, {
           outputType: 'svg'
         });
+
       } catch (error) {
         console.error(error);
       }
-
       parent.children.splice(index, 1, {
-        type: 'html',
+        type: 'svg',
         value: statemachine
       });
       return node;
@@ -38,9 +26,9 @@ const visitCodeBlock = (ast) => {
   })
 }
 
-export default () => {
+export const smcatParser = () => {
   return function transformer(ast, vFile, next) {
-    visitCodeBlock(ast);
+    visitCodeBlock(ast, vFile);
 
     if (typeof next === 'function') {
       return next(null, ast, vFile);
@@ -49,6 +37,4 @@ export default () => {
     return ast;
   }
 }
-
-const parser = (thing) => { }
 
