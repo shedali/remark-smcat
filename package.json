@@ -1,0 +1,30 @@
+{
+	"name": "remark-smcat",
+	"version": "0.0.0",
+	"description": "state machine cat remark plugin",
+	"license": "MIT",
+	"repository": "shedali/remark-smcat",
+	"author": {
+		"name": "Franz",
+		"email": "shedali@gmail.com",
+		"url": "undefined"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"ava": "^2.1.0",
+		"state-machine-cat": "^5.3.9",
+		"xo": "^0.24.0"
+	}
+}
