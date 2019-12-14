@@ -1,5 +1,7 @@
 const smcat = require('./index').smcatParser
 const test = require('ava');
+const fs = require('fs');
+const path = require('path');
 
 // console.log('wbhat is ', smcat);
 const unified = require('unified');
@@ -14,7 +16,6 @@ const processor = unified()
 	.use(remark2rehype)
 	.use(html);
 
-
 const convert: (m: string) => string = (markdown: string) => processor.processSync(markdown).contents
 test("smcat should be a function", (t: any) => {
 	t.is(typeof smcat, "function");
@@ -25,5 +26,6 @@ test('should render markdown to html', (t: any) => {
 })
 
 test('should render smcat to svg', (t: any) => {
-	t.truthy(convert("oh no\n ```smcat\n a=>b; \n ``` \n what if no children ").indexOf('svg'));
+	const file = String(fs.readFileSync(path.join(__dirname, 'fixtures', 'smcat.md')));
+	t.truthy(convert(file).indexOf('svg') > -1);
 })
