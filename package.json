@@ -1,6 +1,6 @@
 {
 	"name": "remark-smcat",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "state machine cat remark plugin",
 	"license": "MIT",
 	"repository": "shedali/remark-smcat",
@@ -34,13 +34,13 @@
 		""
 	],
 	"dependencies": {
+		"fs-extra": "^8.1.0",
 		"rehype-stringify": "^6.0.1",
 		"remark-parse": "^7.0.2",
 		"remark-rehype": "^5.0.0",
 		"state-machine-cat": "^5.3.9",
 		"unified": "^8.4.2",
 		"unified-stream": "^1.0.5",
-		"fs-extra": "^8.1.0",
 		"unist-util-visit": "^2.0.1"
 	},
 	"devDependencies": {
