@@ -1,0 +1,10 @@
+fixtures
+index.test.ts
+index.ts
+license
+node_modules
+package.json
+readme.md
+tsconfig.json
+wallaby.js
+package

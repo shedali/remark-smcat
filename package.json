@@ -22,8 +22,7 @@
 			"ts-node/register"
 		],
 		"files": [
-			"index.test.ts",
-			"!dist"
+			"dist"
 		]
 	},
 	"scripts": {
