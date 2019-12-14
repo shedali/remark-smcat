@@ -26,7 +26,7 @@
 		]
 	},
 	"scripts": {
-		"prepublish": "tsc",
+		"prepublish": "npx rimraf *.svg package dist; tsc",
 		"pretest": "tsc --noEmit",
 		"test": "ava"
 	},
