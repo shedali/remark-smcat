@@ -1,6 +1,6 @@
 {
 	"name": "remark-smcat",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "state machine cat remark plugin",
 	"license": "MIT",
 	"repository": "shedali/remark-smcat",
