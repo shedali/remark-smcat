@@ -9,3 +9,5 @@ tsconfig.json
 wallaby.js
 package
 .svg
+dist/index.test.ts
+dist/index.test.d.ts
