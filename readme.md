@@ -1,4 +1,4 @@
-# remark-smcat [![Build Status](https://travis-ci.com/shedali/remark-smcat.svg?branch=master)](https://travis-ci.com/shedali/remark-smcat) [![Build Status](https://travis-ci.org/shedali/remark-smcat.svg)](https://travis-ci.org/shedali/remark-smcat)
+# remark-smcat [![Build Status](https://travis-ci.com/shedali/remark-smcat.svg?branch=master)](https://travis-ci.com/shedali/remark-smcat)
 
 # Remark State Machine Cat
 
