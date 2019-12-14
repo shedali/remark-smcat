@@ -67,7 +67,7 @@ done -> final;
 
 turns into 
 
-![example](/Users/franz/dev/remark-smcat/example.svg)
+![example](./example.svg)
 
 
 
