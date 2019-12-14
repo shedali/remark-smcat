@@ -45,6 +45,7 @@
 	"devDependencies": {
 		"@types/node": "^12.12.17",
 		"ava": "^2.4.0",
+		"fs-extra": "^8.1.0",
 		"ts-node": "^8.5.4",
 		"typescript": "^3.7.3",
 		"xo": "^0.24.0"

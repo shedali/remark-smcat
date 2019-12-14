@@ -1,28 +1,39 @@
 'use strict';
-
-const smcat = require('state-machine-cat');
 const visit = require('unist-util-visit');
-
+const utils = require('./utils');
+const render = utils.render;
+const getDestinationDir = utils.getDestinationDir;
 const visitCodeBlock = (ast: any, vFile: any) => {
   return visit(ast, 'code', (node: any, index: any, parent: any) => {
-    const { lang, value } = node;
+    const { lang, value, position } = node;
+     const destinationDir = getDestinationDir(vFile);
     if (['smcat'].includes(lang)) {
-      let statemachine;
+      let graphSvgFilename;
       try {
-        statemachine = smcat.render(`${value}`, {
-          outputType: 'svg'
-        });
+        graphSvgFilename = render(destinationDir, value, lang);
+
+        vFile.info(`${lang} code block replaced with graph`, position, 'remark-smcat');
 
       } catch (error) {
         console.error(error);
+        vFile.message(error, position, 'remark-smcat');
+        return node;
       }
-      parent.children.splice(index, 1, {
-        type: 'svg',
-        value: statemachine
-      });
+
+      const image = {
+      type: 'image',
+      title: '`smcat` image',
+      url: graphSvgFilename,
+    };
+
+      // parent.children.splice(index, 1, {
+      //   type: 'image',
+      //   title: '`smcat` image',
+      //   value: statemachine
+      // });
+      parent.children.splice(index, 1, image);
       return node;
     }
-    return node;
   })
 }
 
