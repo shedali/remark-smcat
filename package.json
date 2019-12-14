@@ -21,7 +21,10 @@
 		"require": [
 			"ts-node/register"
 		],
-                "files":["index.test.ts", "!dist"]
+		"files": [
+			"index.test.ts",
+			"!dist"
+		]
 	},
 	"scripts": {
 		"prepublish": "tsc",
