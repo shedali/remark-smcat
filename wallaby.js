@@ -2,6 +2,7 @@ module.exports = function (wallaby) {
     return {
         files: [
             '*.ts',
+            './fixtures/*.md',
             '!*.test.ts'
         ],
         tests: [

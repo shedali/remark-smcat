@@ -1,4 +1,4 @@
-const smcat = require('./index').smcatParser
+const smcat = require('./index')
 const test = require('ava');
 const fs = require('fs');
 const path = require('path');
@@ -25,7 +25,7 @@ test('should render markdown to html', (t: any) => {
 	t.is(convert("# hello"), "<h1>hello</h1>");
 })
 
-test('should render smcat to svg', (t: any) => {
-	const file = String(fs.readFileSync(path.join(__dirname, 'fixtures', 'smcat.md')));
+test.only('should render smcat to svg', (t: any) => {
+	const file = String(fs.readFileSync('./fixtures/smcat.md'));
 	t.truthy(convert(file).indexOf('svg') > -1);
 })

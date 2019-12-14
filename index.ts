@@ -38,3 +38,4 @@ export const smcatParser = () => {
   }
 }
 
+module.exports = smcatParser;
