@@ -1,5 +1,29 @@
 ```smcat
-initial => pleasework;
-backlog => doing;
-doing => test;
+initial,
+backlog,
+doing:
+  entry/ create branch
+  exit/ submit PR,
+review:
+  exit/ merge PR to develop,
+QA,
+done,
+final;
+
+initial -> backlog;
+backlog -> doing: pull;
+
+doing -> review: functionality built;
+
+review -> doing: [code quality not ok];
+review -> QA: [code quality ok];
+review -> QA: [code has minor issues]/
+  create tech debt item;
+
+QA -> doing: [not acceptable];
+QA -> done: [ok but issue(s) found]/
+  create bug(s);
+QA -> done: [okie dokie];
+
+done -> final;
 ```
