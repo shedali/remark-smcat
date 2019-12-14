@@ -51,16 +51,3 @@ const processor = unified()
 process.stdin.pipe(createStream(processor)).pipe(process.stdout);
 
 ```
-
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### foo
-
-Type: `boolean`\
-Default: `false`
-
-Lorem ipsum.
