@@ -11,21 +11,17 @@ const visitCodeBlock = (ast: any, vFile: any) => {
       let graphSvgFilename;
       try {
         graphSvgFilename = render(destinationDir, value, lang);
-
         vFile.info(`${lang} code block replaced with graph`, position, 'remark-smcat');
-
       } catch (error) {
         console.error(error);
         vFile.message(error, position, 'remark-smcat');
         return node;
       }
-
       const image = {
-      type: 'image',
-      title: '`smcat` image',
-      url: graphSvgFilename,
-    };
-
+        type: 'image',
+        title: '`smcat` image',
+        url: graphSvgFilename,
+      };
       // parent.children.splice(index, 1, {
       //   type: 'image',
       //   title: '`smcat` image',
@@ -37,8 +33,10 @@ const visitCodeBlock = (ast: any, vFile: any) => {
   })
 }
 
-export const smcatParser = () => {
+export const smcatParser = (data: any) => {
   return function transformer(ast: any, vFile: any, next: any) {
+    
+    vFile.data = data;
     visitCodeBlock(ast, vFile);
 
     if (typeof next === 'function') {

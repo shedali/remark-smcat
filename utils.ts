@@ -16,7 +16,7 @@ const smcat = require('state-machine-cat');
 function render(destination:any, source:any, engine:any) {
     const unique = crypto.createHmac('sha1', PLUGIN_NAME).update(source).digest('hex');
     const svgFilename = `${unique}.svg`;
-    const svgPath = path.join('.', svgFilename);
+    const svgPath = path.join(destination, svgFilename);
 
     fs.outputFileSync(svgPath, smcat.render(source, {
           outputType: 'svg'
@@ -34,11 +34,11 @@ function render(destination:any, source:any, engine:any) {
  *       * @return {string}
  *        */
 function getDestinationDir(vFile:any) {
-    if (vFile.data.destinationDir) {
+    if (vFile.data && vFile.data.destinationDir) {
           return vFile.data.destinationDir;
         }
 
-    return vFile.dirname;
+    return vFile.cwd;
 }
 
 module.exports = {
