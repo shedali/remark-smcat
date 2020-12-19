@@ -39,7 +39,7 @@
 		"remark-parse": "^7.0.2",
 		"remark-rehype": "^5.0.0",
 		"state-machine-cat": "^5.4.1",
-		"unified": "^8.4.2",
+		"unified": "^9.2.0",
 		"unified-stream": "^1.0.6",
 		"unist-util-visit": "^2.0.3",
 		"@types/node": "^12.19.9"
