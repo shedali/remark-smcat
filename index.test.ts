@@ -32,22 +32,25 @@ test('should render markdown to html', (t: any) => {
 })
 
 
-test('should convert svg to png', async (t: any) => {
+test.serial('should convert svg to png', async (t: any) => {
 	const baseline = await PNG.sync.read(fss.readFileSync('baseline.png'));
-	const svgoutput = await PNG.sync.read(fss.readFileSync('svg-output.png'));
+	
 	const { width, height } = baseline;
 	
 	const file = String(fss.readFileSync(pth.join(__dirname, 'fixtures/smcat.md')));
 
-	t.truthy(convert(file).indexOf('svg') > -1);
-
 	const svg_files = await glob('*.svg');
 	const svg = svg_files.pop()
-	sharp(svg).toFile('svg-output.png');
-	t.truthy(fss.readFileSync('svg-output.png'))
+	await sharp(svg).toFile('svg-output.png');
 	
+	const svgoutput = await PNG.sync.read(fss.readFileSync('svg-output.png'));
+
+	//check for visual diffs with baseline.png
 	const diff = new PNG({ width, height });
 	const difference = await pixelmatch(baseline.data, svgoutput.data, diff.data, width, height, { threshold: 0.1 });
 	console.log('difference is ', difference);
+	
+	t.truthy(convert(file).indexOf('svg') > -1);
+	t.truthy(fss.readFileSync('svg-output.png'))
 	t.is(difference, 0);
 })
