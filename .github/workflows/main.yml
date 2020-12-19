@@ -21,7 +21,5 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: "12"
-      - name: build
-        run: npm run build
       - name: test
         run: npm run test
