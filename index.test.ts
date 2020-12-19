@@ -25,11 +25,12 @@ const processor = unified()
 	.use(html);
 
 const convert: (m: string) => string = (markdown: string) => processor.processSync(markdown).contents
+
 test("smcat should be a function", (t: any) => {
 	t.is(typeof parser, "function");
 })
 
-test('should render markdown to html', (t: any) => {
+test.serial('should render markdown to html', (t: any) => {
 	t.is(convert("# hello"), "<h1>hello</h1>");
 })
 
