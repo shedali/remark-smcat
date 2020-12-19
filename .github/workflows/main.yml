@@ -11,6 +11,7 @@ jobs:
         env:
           cache-name: cache-node-modules-
         with:
+          path: .
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
