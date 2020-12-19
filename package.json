@@ -11,7 +11,7 @@
 		"url": "http://github.com/shedali/remark-smcat"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=12"
 	},
 	"ava": {
 		"compileEnhancements": false,
