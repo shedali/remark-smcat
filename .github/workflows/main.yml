@@ -1,0 +1,27 @@
+# github actions workflow template
+
+on: [push, pull_request]
+jobs:
+  CI:
+    name: build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache node modules # https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#caching-dependencies
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-node-modules-
+        with:
+          path: .
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+      - name: install dependencies
+        run: npm install
+      - name: test
+        run: npm run test
