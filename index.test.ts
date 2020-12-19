@@ -14,8 +14,6 @@ const test = require('ava');
 const unified = require('unified');
 
 const PNG = require('pngjs').PNG;
-const baseline = PNG.sync.read(fss.readFileSync('baseline.png'));
-const { width, height } = baseline;
 
 
 const processor = unified()
@@ -36,7 +34,9 @@ test.serial('should render markdown to html', (t: any) => {
 
 
 test.serial('should convert svg to png', async (t: any) => {
-
+	const baseline = PNG.sync.read(fss.readFileSync('baseline.png'));
+	const { width, height } = baseline;
+	
 	const file = String(fss.readFileSync(pth.join(__dirname, 'fixtures/smcat.md')));
 
 	t.truthy(convert(file).indexOf('svg') > -1);
