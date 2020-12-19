@@ -38,7 +38,7 @@ test.serial('should convert svg to png', async (t: any) => {
 	const { width, height } = baseline;
 	
 	const file = String(fss.readFileSync(pth.join(__dirname, 'fixtures/smcat.md')));
-
+	convert(file)
 	const svg_files = await glob('*.svg');
 	const svg = svg_files.pop()
 	await sharp(svg).toFile('svg-output.png');
