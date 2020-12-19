@@ -1,6 +1,6 @@
 # github actions workflow template
 
-on: [push]
+on: [push, pull_request]
 jobs:
   CI:
     name: build and test
