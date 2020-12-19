@@ -15,7 +15,6 @@ const unified = require('unified');
 
 const PNG = require('pngjs').PNG;
 
-
 const processor = unified()
 	.use(remarkparse, { gfm: true, commonmark: true, footnotes: true })
 	.use(parser)
@@ -34,7 +33,8 @@ test('should render markdown to html', (t: any) => {
 
 
 test('should convert svg to png', async (t: any) => {
-	const baseline = PNG.sync.read(fss.readFileSync('baseline.png'));
+	const baseline = await PNG.sync.read(fss.readFileSync('baseline.png'));
+	const svgoutput = await PNG.sync.read(fss.readFileSync('svg-output.png'));
 	const { width, height } = baseline;
 	
 	const file = String(fss.readFileSync(pth.join(__dirname, 'fixtures/smcat.md')));
@@ -45,9 +45,9 @@ test('should convert svg to png', async (t: any) => {
 	const svg = svg_files.pop()
 	sharp(svg).toFile('svg-output.png');
 	t.truthy(fss.readFileSync('svg-output.png'))
-	const svgoutput = await PNG.sync.read(fss.readFileSync('svg-output.png'));
+	
 	const diff = new PNG({ width, height });
-	const difference = pixelmatch(baseline.data, svgoutput.data, diff.data, width, height, { threshold: 0.1 });
+	const difference = await pixelmatch(baseline.data, svgoutput.data, diff.data, width, height, { threshold: 0.1 });
 	console.log('difference is ', difference);
 	t.is(difference, 0);
 })
