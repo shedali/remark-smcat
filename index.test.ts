@@ -45,7 +45,7 @@ test.serial('should convert svg to png', async (t: any) => {
 	const svg = svg_files.pop()
 	sharp(svg).toFile('svg-output.png');
 	t.truthy(fss.readFileSync('svg-output.png'))
-	const svgoutput = PNG.sync.read(fss.readFileSync('svg-output.png'));
+	const svgoutput = await PNG.sync.read(fss.readFileSync('svg-output.png'));
 	const diff = new PNG({ width, height });
 	const difference = pixelmatch(baseline.data, svgoutput.data, diff.data, width, height, { threshold: 0.1 });
 	console.log('difference is ', difference);
