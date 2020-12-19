@@ -28,12 +28,12 @@ test("smcat should be a function", (t: any) => {
 	t.is(typeof parser, "function");
 })
 
-test.serial('should render markdown to html', (t: any) => {
+test('should render markdown to html', (t: any) => {
 	t.is(convert("# hello"), "<h1>hello</h1>");
 })
 
 
-test.serial('should convert svg to png', async (t: any) => {
+test('should convert svg to png', async (t: any) => {
 	const baseline = PNG.sync.read(fss.readFileSync('baseline.png'));
 	const { width, height } = baseline;
 	
