@@ -25,3 +25,9 @@ jobs:
         run: npm install
       - name: test
         run: npm run test
+      - name: output test images
+        uses: actions/upload-artifact@v2
+        with:
+          name: output test images
+          path: output
+          retention-days: 20       
