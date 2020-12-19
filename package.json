@@ -46,6 +46,7 @@
 	"devDependencies": {
 		"@types/node": "^12.19.9",
 		"ava": "^2.4.0",
+		"nyc": "^15.1.0",
 		"ts-node": "^8.10.2",
 		"typescript": "^3.9.7",
 		"xo": "^0.24.0"
