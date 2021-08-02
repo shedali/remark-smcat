@@ -43,7 +43,7 @@
 		"unist-util-visit": "^2.0.3"
 	},
 	"devDependencies": {
-		"@types/node": "^12.19.9",
+		"@types/node": "^16.4.10",
 		"ava": "^3.14.0",
 		"glob-promise": "^3.4.0",
 		"nyc": "^15.1.0",
