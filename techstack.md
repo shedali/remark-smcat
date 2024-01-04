@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 shedali/remark-smcat is built on the following main stack:
+
 - [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [TypeScript](http://www.typescriptlang.org) – Languages
@@ -10,11 +11,13 @@ shedali/remark-smcat is built on the following main stack:
 - [Travis CI](http://travis-ci.com/) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 shedali/remark-smcat is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png' alt='Node.js'/> [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'/> [TypeScript](http://www.typescriptlang.org) – Languages
@@ -23,14 +26,15 @@ shedali/remark-smcat is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/460/Lu6cGu0z_400x400.png' alt='Travis CI'/> [Travis CI](http://travis-ci.com/) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [shedali/remark-smcat](https://github.com/shedali/remark-smcat)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|21<br/>Tools used|11/09/23 <br/>Report generated|
+|21<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -133,7 +137,7 @@ Full tech stack [here](/techstack.md)
 |[pixelmatch](https://www.npmjs.com/pixelmatch)|v5.2.1|12/19/20|Franz Sittampalam |ISC|N/A|
 |[pngjs](https://www.npmjs.com/pngjs)|v6.0.0|12/19/20|Franz Sittampalam |MIT|N/A|
 |[remark-parse](https://www.npmjs.com/remark-parse)|v7.0.2|12/13/19|Franz |MIT|N/A|
-|[sharp](https://www.npmjs.com/sharp)|v0.26.3|12/19/20|Franz Sittampalam |Apache-2.0|[CVE-2022-29256](https://github.com/advisories/GHSA-gp95-ppv5-3jc5) (Moderate)|
+|[sharp](https://www.npmjs.com/sharp)|v0.26.3|12/19/20|Franz Sittampalam |Apache-2.0|[](https://github.com/advisories/GHSA-54xq-cgqr-rpm3) (High)<br/>[CVE-2022-29256](https://github.com/advisories/GHSA-gp95-ppv5-3jc5) (Moderate)|
 |[ts-node](https://www.npmjs.com/ts-node)|v9.1.1|12/19/20|dependabot[bot] |MIT|N/A|
 |[unified](https://www.npmjs.com/unified)|v9.2.0|12/19/20|dependabot[bot] |MIT|N/A|
 |[unist-util-visit](https://www.npmjs.com/unist-util-visit)|v2.0.3|12/19/20|Franz Sittampalam |MIT|N/A|
@@ -142,4 +146,4 @@ Full tech stack [here](/techstack.md)
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
